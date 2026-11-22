@@ -29,7 +29,7 @@ https://raw.githubusercontent.com/h753951/github-image-bed/main/images/math2/<�
 
 ```text
 https://raw.githubusercontent.com/h753951/github-image-bed/main/images/408/2024-11.jpg
-https://raw.githubusercontent.com/h753951/github-image-bed/main/images/408/2017-8-1.jpg
+https://raw.githubusercontent.com/h753951/github-image-bed/main/images/408/2017-8_1.jpg
 https://raw.githubusercontent.com/h753951/github-image-bed/main/images/math2/2008-2.jpg
 ```
 
@@ -70,8 +70,8 @@ HTML：
 一题多图用后缀区分：
 
 ```text
-2017-8-1.jpg ~ 2017-8-4.jpg
-2001-10-1.jpg ~ 2001-10-5.jpg
+2017-8_1.jpg ~ 2017-8_4.jpg
+2001-10_1.jpg ~ 2001-10_5.jpg
 ```
 
 少数特殊情况看 [`题号索引.csv`](题号索引.csv)：
@@ -89,7 +89,7 @@ Import-Csv .\题号索引.csv | Where-Object { $_.question_id -eq '2017-8' } | S
 ## 文件名说明
 
 - 单图题：`<题号>.jpg`，如 `2024-11.jpg`；
-- 多图题：`<题号>-1.jpg`、`<题号>-2.jpg`，顺序按题库原文出现顺序；
+- 多图题：`<题号>_1.jpg`、`<题号>_2.jpg`，顺序按题库原文出现顺序；
 - 共用图：按第一次出现的题号命名，其他题号在索引里指向同一个文件；
 - 无题号图：`misc-1.jpg` ~ `misc-3.jpg`。
 
