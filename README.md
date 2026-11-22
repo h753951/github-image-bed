@@ -43,6 +43,35 @@ HTML：
 <img src="https://raw.githubusercontent.com/h753951/github-image-bed/main/images/408/03818048370bb028cf3e4b20c83ab7d49182af0668979d420a80bb3df9eb6ed0.jpg" alt="408-2024-11">
 ```
 
+在 408 题库数据里替换时，只换括号里的路径：
+
+```text
+改前：![image](题目图片/03818048370bb028cf3e4b20c83ab7d49182af0668979d420a80bb3df9eb6ed0.jpg)
+
+改后：![image](https://raw.githubusercontent.com/h753951/github-image-bed/main/images/408/03818048370bb028cf3e4b20c83ab7d49182af0668979d420a80bb3df9eb6ed0.jpg)
+```
+
+数学二同理，文件名 `math2_001.jpg` 不变，只换前缀。
+
+## 按题号查图
+
+GitHub 只是静态文件托管，本身**不能按题号搜索图片**；408 的文件名又是哈希，直接看看不出来。
+所以根目录附了一份 [`题号索引.csv`](题号索引.csv)：
+
+- 408：114 道题、145 条图片引用；
+- 数学二：21 道题、29 条图片引用；
+- 列：`project,question_id,file,url`，一个题有多张图就有多行。
+
+用法一：用 Excel / VSCode / 记事本打开，`Ctrl+F` 搜题号。
+
+用法二：PowerShell 里直接筛：
+
+```powershell
+Import-Csv .\题号索引.csv | Where-Object { $_.question_id -eq '2024-11' }
+```
+
+输出里的 `url` 列就是可以直接用的 raw 链接。
+
 ## 文件名说明
 
 - `images/408/`：137 张，文件名沿用原题库的 64 位内容哈希，和 408 题库里的
